@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Bell, CircleUser, Mail, Menu, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
@@ -19,22 +19,30 @@ export default function Navbar() {
     <header className="border-b sticky top-0 bg-white z-50">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Brand */}
-        <Link href="/" className="font-bold text-xl">
+        <Link href="/" className="font-bold text-2xl">
           MyApp
         </Link>
 
-        <Input className="hidden md:flex mx-4" type="text" placeholder="Search" />
+        <Link href="#" className="hidden md:flex ms-6 me-4" >
+          Kategori
+        </Link>
+
+        <Input
+          className="hidden md:flex mx-4"
+          type="text"
+          placeholder="Search"
+        />
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex">
+        <nav className="hidden md:flex items-center gap-4">
           <NavigationMenu>
             <NavigationMenuList className="flex gap-6">
               <NavigationMenuItem>
                 <Link
-                  href="/"
+                  href="/products"
                   className="text-sm hover:text-primary transition"
                 >
-                  Home
+                  <ShoppingCart />
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -42,15 +50,25 @@ export default function Navbar() {
                   href="/products"
                   className="text-sm hover:text-primary transition"
                 >
-                  Products
+                  <Bell />
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link
-                  href="/dashboard"
+                  href="/products"
                   className="text-sm hover:text-primary transition"
                 >
-                  Dashboard
+                  <Mail />
+                </Link>
+              </NavigationMenuItem>
+              <div className="h-6 w-[1px] bg-gray-300"></div>
+              <NavigationMenuItem>
+                <Link
+                  href="/products"
+                  className="flex items-center gap-2 text-sm hover:text-primary transition"
+                >
+                  <CircleUser />
+                  User
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
