@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Brand */}
         <Link href="/" className="font-bold text-2xl">
-          MyApp
+          MyStore
         </Link>
 
         <Link href="#" className="hidden md:flex ms-6 me-4" >
